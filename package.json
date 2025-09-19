@@ -1,10 +1,13 @@
 {
   "name": "memora-plugin",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "release:patch": "tsc && npm version patch && npm publish",
+    "release:minor": "tsc && npm version minor && npm publish",
+    "release:major": "tsc && npm version major && npm publish"
   },
   "keywords": [],
   "author": "",

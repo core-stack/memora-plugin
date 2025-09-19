@@ -8,9 +8,7 @@ export interface IPlugin<Input = any, Output = any> {
   dispose?(): Promise<void> | void;
 }
 
-export interface PluginModule<TConfig = any, TInstance = IPlugin> {
-  initialize: (ctx: PluginContext<TConfig>) => Promise<TInstance>;
-}
+export type Initializer<TConfig = any, TInstance = IPlugin> = (ctx: PluginContext<TConfig>) => Promise<TInstance>;
 
 export interface PluginServiceProvider {
   getService<T>(name: string): Promise<T | undefined> | T | undefined;
